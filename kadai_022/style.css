@@ -1,0 +1,73 @@
+h1 , p, body {
+    margin: 0; /* h1,p,body要素の上下左右余白をゼロにする */
+}
+p, a {
+    font-size: 20px;
+}
+header {
+    margin-bottom: 20px; /* 下の余白を20px */
+    background-color: rgb(244, 79, 79); 
+    text-align: center; /* 中の要素を中揃えにする */
+}
+h1 {
+    color: rgb(255, 255, 255);
+}
+h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122);
+}
+h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+}
+main {
+    /* main要素内の余白を上下左右とも10pxに指定 */
+    padding: 10px;
+}
+#parent {
+    /* flexコンテナに設定する */
+    display: flex;
+    justify-content: space-around;
+}
+.contents {
+    border: 3px solid rgb(238, 204, 204);
+    flex-basis: 25%;
+    padding: 10px 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+.contents img {
+    margin: 10px 0;
+    width: 70%;
+}
+/* p要素内の2番目テキストの最初の文字のみスタイルを変える */
+p:nth-of-type(2)::first-letter {
+    font-weight: bold; /* 太字にする */
+    color: rgb(97, 206, 249)
+}
+footer {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+}
+a {
+    color: rgb(255, 255, 255);
+}
+a:visited {
+    color: rgb(193, 234, 251);
+}
+a:hover {
+    color: rgb(245, 178, 168);
+}
+
+/* 画面幅768px以下のときにスタイルが適用される */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 30px;
+    }
+    p { 
+        font-size: 25px;
+    }
+    #parent {
+        flex-direction: column;   
+    }
+}
